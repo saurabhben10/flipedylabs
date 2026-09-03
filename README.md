@@ -1,6 +1,6 @@
 # Flipedy Labs — Official Website
 
-Official website for **Flipedy Labs** (`flipedylabs.github.io` / `mahionlabs.github.io`), an independent software studio building practical mobile applications, AI-powered tools, productivity software, and refined digital products.
+Official website for **Flipedy Labs** (`saurabhben10/flipedylabs`), an independent software studio building practical mobile applications, AI-powered tools, productivity software, and refined digital products.
 
 This website serves as:
 1. The official developer website for Google Play Console account verification.
@@ -14,7 +14,7 @@ This website serves as:
 ## Tech Stack
 
 - **Framework**: [Astro](https://astro.build/) (Static Output Mode)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) + Classy Editorial & Champagne Graphite Design System
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) + Classy Editorial & Warm Alabaster Design System
 - **Language**: TypeScript & Semantic HTML5
 - **Icons**: Custom SVG Vector Assets (Zero runtime icon bloat)
 - **Hosting**: GitHub Pages via GitHub Actions CI/CD
@@ -30,8 +30,8 @@ This website serves as:
 
 ### Installation
 ```bash
-git clone https://github.com/saurabhben10/mahionlabs.github.io.git
-cd mahionlabs.github.io
+git clone https://github.com/saurabhben10/flipedylabs.git
+cd flipedylabs
 npm install
 ```
 
@@ -58,10 +58,10 @@ All repeated studio identity values, support contact emails, URLs, and registere
 ## Google Play Console Guidelines
 
 When submitting this site to your Google Play developer profile:
-- **Developer Website URL**: `https://saurabhben10.github.io/mahionlabs.github.io` (or `https://flipedylabs.com`)
+- **Developer Website URL**: `https://saurabhben10.github.io/flipedylabs` (or `https://flipedylabs.com`)
 - **Developer Email**: `saurabh.shrma@outlook.com`
-- **Privacy Policy URL**: `https://saurabhben10.github.io/mahionlabs.github.io/privacy`
-- **App Specific Policy (e.g. Nightjar)**: `https://saurabhben10.github.io/mahionlabs.github.io/privacy/nightjar`
+- **Privacy Policy URL**: `https://saurabhben10.github.io/flipedylabs/privacy`
+- **App Specific Policy (e.g. Nightjar)**: `https://saurabhben10.github.io/flipedylabs/privacy/nightjar`
 
 ---
 

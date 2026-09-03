@@ -2,7 +2,7 @@ import type { SiteConfig } from '../types';
 
 /**
  * Helper to ensure internal paths respect Astro's base URL
- * (e.g. /mahionlabs.github.io/ on GitHub Pages vs / on custom domain)
+ * (e.g. /flipedylabs/ on GitHub Pages vs / on custom domain)
  */
 export function formatUrl(path: string): string {
   if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('mailto:') || path.startsWith('#')) {
@@ -24,12 +24,12 @@ export const siteConfig: SiteConfig = {
   name: 'Flipedy Labs',
   tagline: 'Thoughtful software crafted for everyday clarity.',
   description: 'Flipedy Labs is an independent software studio creating practical mobile applications, intelligent utilities, and refined digital products designed to solve real problems.',
-  siteUrl: 'https://saurabhben10.github.io/mahionlabs.github.io',
+  siteUrl: 'https://saurabhben10.github.io/flipedylabs',
   email: 'saurabh.shrma@outlook.com',
   developerName: 'Flipedy Labs',
   copyrightYear: 2026,
   privacyLastUpdated: 'September 2026',
-  githubUrl: 'https://github.com/saurabhben10/mahionlabs.github.io',
+  githubUrl: 'https://github.com/saurabhben10/flipedylabs',
   googlePlayDeveloperUrl: 'https://play.google.com/store/apps/developer?id=Flipedy+Labs',
   navItems: [
     { label: 'Home', href: '/' },
