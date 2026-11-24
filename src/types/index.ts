@@ -17,6 +17,14 @@ export interface AppProduct {
   version?: string;
   tags?: string[];
   screenshots?: string[];
+  /** Optional app-specific privacy sections. When provided, they replace the generic addendum text. */
+  privacySections?: PrivacySection[];
+}
+
+export interface PrivacySection {
+  title: string;
+  paragraphs?: string[];
+  bullets?: string[];
 }
 
 export interface NavItem {

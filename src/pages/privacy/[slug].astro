@@ -16,6 +16,9 @@ interface Props {
 }
 
 const { app } = Astro.props;
+const customSections = app.privacySections ?? [];
+const hasCustom = customSections.length > 0;
+const pad = (n: number) => String(n).padStart(2, '0');
 ---
 
 <BaseLayout
@@ -23,7 +26,7 @@ const { app } = Astro.props;
   description={`Privacy Policy and data practices disclosure for ${app.name}, developed by Flipedy Labs.`}
 >
   <div class="py-16 md:py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    
+
     <!-- Breadcrumb -->
     <nav class="flex items-center gap-2 text-xs text-ink-500 mb-8 font-mono" aria-label="Breadcrumb">
       <a href={formatUrl('/')} class="hover:text-ink-950 transition-colors">Home</a>
@@ -35,7 +38,7 @@ const { app } = Astro.props;
 
     <!-- Header -->
     <SectionHeader
-      eyebrow="App Privacy Addendum"
+      eyebrow="App Privacy Policy"
       title={`${app.name} Privacy Policy`}
       description={`Specific data collection and security practices for ${app.name}.`}
     />
@@ -48,37 +51,53 @@ const { app } = Astro.props;
 
     <!-- Main Content -->
     <div class="mt-12 glass-panel rounded-3xl p-8 sm:p-12 border border-black/[0.08] bg-white space-y-8 text-ink-700 leading-relaxed text-sm sm:text-base font-normal shadow-subtle">
-      
-      <section class="space-y-3">
-        <h2 class="text-lg font-bold text-ink-950">01. Scope & Application</h2>
-        <p>
-          This policy applies specifically to the mobile application <strong>{app.name}</strong> created and published by <strong>{siteConfig.developerName}</strong>. This document supplements our <a href={formatUrl('/privacy')} class="text-gold-600 hover:underline">General Privacy Policy</a>.
-        </p>
-      </section>
+
+      {hasCustom ? (
+        customSections.map((section, i) => (
+          <section class={`space-y-3 ${i > 0 ? 'pt-6 border-t border-black/[0.06]' : ''}`}>
+            <h2 class="text-lg font-bold text-ink-950">{pad(i + 1)}. {section.title}</h2>
+            {(section.paragraphs ?? []).map((p) => <p>{p}</p>)}
+            {section.bullets && section.bullets.length > 0 && (
+              <ul class="list-disc pl-5 space-y-2">
+                {section.bullets.map((b) => <li>{b}</li>)}
+              </ul>
+            )}
+          </section>
+        ))
+      ) : (
+        <>
+          <section class="space-y-3">
+            <h2 class="text-lg font-bold text-ink-950">01. Scope &amp; Application</h2>
+            <p>
+              This policy applies specifically to the mobile application <strong>{app.name}</strong> created and published by <strong>{siteConfig.developerName}</strong>. This document supplements our <a href={formatUrl('/privacy')} class="text-gold-600 hover:underline">General Privacy Policy</a>.
+            </p>
+          </section>
+
+          <section class="space-y-3 pt-6 border-t border-black/[0.06]">
+            <h2 class="text-lg font-bold text-ink-950">02. Data Storage &amp; Offline-First Design</h2>
+            <p>
+              {app.name} is engineered using an offline-first architecture. All user configurations, schedules, notes, and preferences entered into {app.name} remain on your local device storage. We do not transmit or store your personal operational data on remote servers without explicit user consent.
+            </p>
+          </section>
+
+          <section class="space-y-3 pt-6 border-t border-black/[0.06]">
+            <h2 class="text-lg font-bold text-ink-950">03. Device Permissions</h2>
+            <p>
+              {app.name} requests only the standard Android operating system permissions necessary to deliver its core productivity features (such as local notifications for schedule reminders or local storage access for export). No sensitive permissions (such as contacts, microphone, or precise background GPS) are requested unless explicitly required and disclosed.
+            </p>
+          </section>
+
+          <section class="space-y-3 pt-6 border-t border-black/[0.06]">
+            <h2 class="text-lg font-bold text-ink-950">04. Telemetry &amp; Crash Reporting</h2>
+            <p>
+              In the event of an unexpected crash, anonymous crash stack traces may be processed via standard Google Play Console developer reporting to help us identify and resolve bugs. No personal identifying information or schedule data is included in these diagnostic dumps.
+            </p>
+          </section>
+        </>
+      )}
 
       <section class="space-y-3 pt-6 border-t border-black/[0.06]">
-        <h2 class="text-lg font-bold text-ink-950">02. Data Storage & Offline-First Design</h2>
-        <p>
-          {app.name} is engineered using an offline-first architecture. All user configurations, schedules, notes, and preferences entered into {app.name} remain on your local device storage. We do not transmit or store your personal operational data on remote servers without explicit user consent.
-        </p>
-      </section>
-
-      <section class="space-y-3 pt-6 border-t border-black/[0.06]">
-        <h2 class="text-lg font-bold text-ink-950">03. Device Permissions</h2>
-        <p>
-          {app.name} requests only the standard Android operating system permissions necessary to deliver its core productivity features (such as local notifications for schedule reminders or local storage access for export). No sensitive permissions (such as contacts, microphone, or precise background GPS) are requested unless explicitly required and disclosed.
-        </p>
-      </section>
-
-      <section class="space-y-3 pt-6 border-t border-black/[0.06]">
-        <h2 class="text-lg font-bold text-ink-950">04. Telemetry & Crash Reporting</h2>
-        <p>
-          In the event of an unexpected crash, anonymous crash stack traces may be processed via standard Google Play Console developer reporting to help us identify and resolve bugs. No personal identifying information or schedule data is included in these diagnostic dumps.
-        </p>
-      </section>
-
-      <section class="space-y-3 pt-6 border-t border-black/[0.06]">
-        <h2 class="text-lg font-bold text-ink-950">05. Support & Inquiries</h2>
+        <h2 class="text-lg font-bold text-ink-950">{pad((hasCustom ? customSections.length : 4) + 1)}. Support &amp; Inquiries</h2>
         <p>
           For specific questions regarding {app.name} or data handling, contact us directly at <a href={`mailto:${siteConfig.email}`} class="text-gold-600 hover:underline">{siteConfig.email}</a>.
         </p>
