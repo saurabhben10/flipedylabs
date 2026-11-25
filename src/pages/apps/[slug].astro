@@ -45,11 +45,22 @@ const currentStatus = statusConfig[app.status] || statusConfig['coming-soon'];
     <div class="glass-panel rounded-3xl p-8 sm:p-12 border border-black/[0.08] bg-white relative overflow-hidden shadow-subtle">
       <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-black/[0.06]">
         <div class="flex items-center gap-5">
-          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-paper-200 border border-black/[0.06] p-3.5 flex items-center justify-center text-ink-900 shadow-xs flex-shrink-0">
-            <svg class="w-10 h-10 text-gold-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>
-          </div>
+          {app.icon === 'cadence-care' ? (
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#121316] border border-[#d4a73a]/60 p-2.5 flex items-center justify-center shadow-xs flex-shrink-0">
+              <svg class="w-14 h-14" viewBox="0 0 100 100" fill="none">
+                <path d="M 77.7 34 A 32 32 0 1 0 77.7 66" stroke="#D4A73A" stroke-width="8" stroke-linecap="round" />
+                <path d="M 66.1 36.5 A 21 21 0 1 0 66.1 63.5" stroke="#2DD4BF" stroke-width="6.5" stroke-linecap="round" />
+                <polyline points="33,52 42,52 47,38 54,62 59,49 69,49" stroke="#FAF9F5" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="72.5" cy="49" r="4.8" fill="#D4A73A" />
+              </svg>
+            </div>
+          ) : (
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-paper-200 border border-black/[0.06] p-3.5 flex items-center justify-center text-ink-900 shadow-xs flex-shrink-0">
+              <svg class="w-10 h-10 text-gold-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+          )}
           <div>
             <div class="flex flex-wrap items-center gap-2.5 mb-1.5">
               <h1 class="text-2xl sm:text-3xl font-bold text-ink-950 tracking-tight">{app.name}</h1>

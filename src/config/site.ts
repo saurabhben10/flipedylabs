@@ -43,68 +43,76 @@ export const siteConfig: SiteConfig = {
       id: 'cadence-care',
       slug: 'cadence-care',
       name: 'Cadence Care',
-      tagline: 'Autism & pediatric therapy session tracker for parents and therapists.',
-      category: 'Parenting & Productivity',
-      description: 'A calm, precise calendar for Speech, OT, ABA, Special Education and Physiotherapy schedules — with 1-to-1 makeup adjustments, day notes, class reminders and a prepaid session ledger.',
+      icon: 'cadence-care',
+      tagline: 'Built with heart for autism parents & pediatric therapists — every session, sensory note & makeup class in one calm place.',
+      category: 'Autism Parenting & Therapy Care',
+      description: 'Raising an autistic child means coordinating Speech & AAC, Occupational Therapy (Sensory Integration), ABA, and Special Ed every single week. Cadence Care replaces scattered WhatsApp threads and notebook tallies with one calm, private therapy calendar.',
       detailedDescription: [
-        'Cadence Care replaces scattered chats, paper diaries and confusing prepaid fee maths with one clear calendar for every child and every therapist.',
-        'Parents and therapists register once with their role, and the app tailors itself automatically — complete with biometric sign-in, native Android class reminders and Google Cloud app backup.'
+        'Sensory overwhelm days, sleep regressions, and sudden illnesses happen — and rescheduling shouldn\'t mean losing track of paid therapy hours. Cadence Care links every missed class 1-to-1 to its replacement makeup date in distinct Adjustment Violet, with instant single-tap cross-references so neither parents nor therapists ever lose count.',
+        'Jot down daily therapy wins, regulation cues, or home-practice goals right on the calendar (\'N\' day badges), track multi-therapist prepaid session packages down to the exact session left, and rest easy knowing your child\'s records stay 100% private on your phone with confirmation-protected deletes, instant Undo, and Biometric Sign-In.'
       ],
       features: [
-        'Multi-child & multi-therapist schedules (Daily, Weekly, Monthly)',
-        'Visual 1-to-1 missed-to-makeup adjustments with cross-referenced dates',
-        'Calendar day notes, class push reminders & Present / Absent tracking',
-        'Prepaid advance session ledger per therapist',
-        'Biometric sign-in and automatic Android cloud backup'
+        'Tailored for Speech/AAC, OT & Sensory Integration, ABA, Special Ed & Physio',
+        'Stress-free 1-to-1 sensory-day & illness makeup linking (Adjustment Violet)',
+        'Daily therapy & home-carryover notes (\'N\' calendar badges) for every session',
+        'Crystal-clear prepaid therapy package ledger — know every session & rupee left',
+        'Multi-child & multi-therapist support (Daily, Weekly, or Monthly cadences)',
+        '100% private on-device child records, Biometric Sign-In & Safe-Delete Undo protection'
       ],
       status: 'released',
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.flipedylabs.cadence_care',
       privacyPolicyUrl: '/privacy/cadence-care',
       supportUrl: '/support?app=cadence-care',
-      version: '1.2.1',
-      tags: ['Android', 'Parenting', 'Therapy Tracker', 'Offline-First'],
+      version: '1.2.2',
+      tags: ['Autism Support', 'Speech & OT', 'ABA & SpEd', 'Private On-Device'],
       privacySections: [
         {
-          title: 'Scope & Intended Audience',
+          title: 'Scope, Sensitivity & Intended Audience (Adults 18+)',
           paragraphs: [
-            'This policy applies to the Android application Cadence Care (package com.flipedylabs.cadence_care), published by Flipedy Labs. Cadence Care is a scheduling, attendance and session-ledger organiser intended for adult parents, guardians and therapists aged 18 and over. It is not directed at children and is not intended to be operated by children.'
+            'This policy applies to the Android application Cadence Care (package com.flipedylabs.cadence_care), published by Flipedy Labs. We understand that families raising autistic and neurodivergent children entrust deeply personal routines to their daily organiser.',
+            'Cadence Care is an attendance, makeup-session, and therapy-fee organiser built exclusively for adult parents, caregivers, and pediatric therapists aged 18 and over. The app is not directed at children and is not intended to be operated by children.'
           ]
         },
         {
-          title: 'Data You Enter Stays on Your Device',
+          title: '100% Private On-Device Storage (No Cloud Upload in Free Edition)',
           paragraphs: [
-            'Names, child profiles, therapist details, schedules, attendance records, day notes and prepaid session ledger entries are stored locally in the app\'s private storage on your device. Flipedy Labs does not operate servers for the free edition of Cadence Care and does not receive, view, sell or share this information.'
+            'Every child profile, therapy discipline, therapist schedule, attendance log, sensory/home-practice day note, and prepaid fee ledger entry you enter in Cadence Care Free Edition is stored strictly inside your Android phone\'s private application storage.',
+            'Flipedy Labs does not operate backend servers for the Free Edition and never receives, views, sells, or shares your child\'s therapy records.'
           ],
           bullets: [
-            'Accounts in the free edition are created locally on your device; they are not cloud accounts held by Flipedy Labs.',
-            'Android Auto Backup is enabled so your app data can be backed up, encrypted, to your own Google account and restored when you reinstall or switch phones. This is handled by Google under your Google account settings, and you can turn it off at any time in Android Settings.'
+            'Accounts in the Free Edition are local on-device profiles so your role and preferences load automatically on your phone.',
+            'Cloud backup and device-to-device cloud transfer are disabled in the Free Edition (allowBackup="false"). Encrypted Cloud Backup & 1-Tap Restore, along with live Parent ↔ Therapist cross-phone sync, will be offered exclusively in the upcoming standalone Cadence Care Prime app.'
           ]
         },
         {
           title: 'Permissions & Why We Use Them',
           bullets: [
-            'Notifications (POST_NOTIFICATIONS) and start-up (RECEIVE_BOOT_COMPLETED, WAKE_LOCK, VIBRATE): to deliver scheduled class reminders on your phone so sessions can be marked Present or Absent on time, including after a restart.',
-            'Biometric (USE_BIOMETRIC): optional fingerprint or face unlock. Verification is performed entirely by Android; Cadence Care never accesses or stores biometric data.',
-            'Internet, network state and Advertising ID (INTERNET, ACCESS_NETWORK_STATE, AD_ID): used only to load advertisements in the free edition.'
+            'Notifications (POST_NOTIFICATIONS) & Device Restart Schedule Sync (RECEIVE_BOOT_COMPLETED, WAKE_LOCK, VIBRATE): delivers timely local class reminders on your phone so you can mark sessions Present or Absent right after therapy.',
+            'Biometric Unlock (USE_BIOMETRIC): optional Fingerprint or Face Unlock to keep your family\'s therapy ledger private on shared phones. Verification is handled strictly by Android hardware; Cadence Care never accesses or stores biometric data.',
+            'Internet, Network State & Advertising ID (INTERNET, ACCESS_NETWORK_STATE, com.google.android.gms.permission.AD_ID): used solely to serve family-safe banner advertisements in the free edition.'
           ]
         },
         {
-          title: 'Advertising (Google AdMob)',
+          title: 'Family-Safe Advertising (Google AdMob)',
           paragraphs: [
-            'The free edition of Cadence Care shows banner advertisements served by Google AdMob, limited to family-appropriate content (maximum rating: PG). To serve, limit and measure ads and to prevent fraud, Google may collect your device\'s Advertising ID, approximate location derived from IP address, ad interaction data and diagnostic information. This collection is performed by Google, not Flipedy Labs.',
-            'You can learn how Google uses this data at https://policies.google.com/technologies/partner-sites. You can reset or delete your Advertising ID, or opt out of personalised ads, from Android Settings → Google → Ads (or Settings → Privacy → Ads, depending on your device).'
+            'To keep Cadence Care free for families and independent therapists, the Free Edition displays a small bottom banner served by Google AdMob, strictly configured for family-appropriate content (maximum ad content rating: PG). To deliver, frequency-cap, and measure ads and prevent fraud, Google AdMob may collect your device\'s Android Advertising ID, coarse IP-based region, ad interaction signals, and SDK crash/performance diagnostics.',
+            'You can review how Google processes partner-app data at https://policies.google.com/technologies/partner-sites, and you can reset/delete your Advertising ID or opt out of personalised ads anytime under Android Settings → Google → Ads.'
           ]
         },
         {
-          title: 'Data Retention & Deletion',
+          title: 'Safe Deletion, Reset Protection & Full User Control',
           paragraphs: [
-            'Because your data is stored on your device, you control it completely. You can edit or delete entries inside the app at any time. To erase all Cadence Care data, go to Android Settings → Apps → Cadence Care → Storage → Clear storage, or uninstall the app. Backed-up copies can be removed from your Google account backup settings.'
+            'Because all therapy records reside locally on your device, you remain in complete control at all times:'
+          ],
+          bullets: [
+            'Every individual delete inside the app asks for confirmation first and offers an instant Undo option to prevent accidental taps.',
+            'You can wipe all profiles, sessions, notes, and payment records at any time from Profile & Settings → Danger Zone → Reset All Data (protected by a typed RESET safeguard), or permanently erase everything via Android Settings → Apps → Cadence Care → Storage → Clear storage, or by uninstalling the app.'
           ]
         },
         {
-          title: 'Changes to This Policy',
+          title: 'Updates to This Policy',
           paragraphs: [
-            'We may update this policy when we release new features or companion editions such as Cadence Care Prime. Updates will be published on this page with a revised date.'
+            'We may update this Privacy Policy as we refine Cadence Care or launch companion editions such as Cadence Care Prime. Any updates will be published at this URL with a revised date.'
           ]
         }
       ]
